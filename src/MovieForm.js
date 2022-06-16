@@ -1,0 +1,3 @@
+// MovieForm({ setMovieFormName, movieFormYearReleased, setMovieFormTitle, movieFormDirector, setMovieFormColor, movieFormColor, submitMovie }) : on change for each input, call the appropriate state handler prop with the correct e.target.value to update App.js state.
+
+// MovieForm({ setMovieFormName, movieFormYearReleased, setMovieFormTitle, movieFormDirector, setMovieFormColor, movieFormColor, handleSubmitMovie }) : on submit, add a movie to state.	

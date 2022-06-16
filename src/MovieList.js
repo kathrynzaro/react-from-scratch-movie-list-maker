@@ -1,0 +1,1 @@
+// MovieList({ movies }) : takes in a movies prop and renders a list of Movie components.	
