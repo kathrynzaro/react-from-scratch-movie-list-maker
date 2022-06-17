@@ -1,6 +1,22 @@
-.App, body {
+.App, body, html, #root {
   text-align: center;
   background-color: black;
+  color: white;
+  height: 100%;
+}
+
+label {
+  display: block;
+}
+
+.poster {
+  width: 200px;
+  height: 300px;
+  display: flex;
+}
+
+.current-movie {
+  height: 400px;
 }
 
 
