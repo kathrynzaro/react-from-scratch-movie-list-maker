@@ -45,6 +45,6 @@ export default function MovieForm({
 
 
 
-// MovieForm({ movieFormYearReleased, setMovieFormTitle, movieFormDirector, setMovieFormColor, movieFormColor, submitMovie }) : on change for each input, call the appropriate state handler prop with the correct e.target.value to update App.js state.
+// ✅ MovieForm({ movieFormYearReleased, setMovieFormTitle, movieFormDirector, setMovieFormColor, movieFormColor, submitMovie }) : on change for each input, call the appropriate state handler prop with the correct e.target.value to update App.js state.
 
-// MovieForm({ movieFormYearReleased, setMovieFormTitle, movieFormDirector, setMovieFormColor, movieFormColor, handleSubmitMovie }) : on submit, add a movie to state.	
+// ✅ MovieForm({ movieFormYearReleased, setMovieFormTitle, movieFormDirector, setMovieFormColor, movieFormColor, handleSubmitMovie }) : on submit, add a movie to state.	

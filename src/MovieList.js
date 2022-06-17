@@ -16,4 +16,4 @@ export default function MovieList({ filteredMovies, handleDeleteMovie }) {
 
 
 
-// MovieList({ movies }) : takes in a movies prop and renders a list of Movie components.	
+// ✅ MovieList({ movies }) : takes in a movies prop and renders a list of Movie components.	

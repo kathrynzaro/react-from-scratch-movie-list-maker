@@ -33,6 +33,11 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
 
+  useEffect(() => {
+    setFilteredMovies(allMovies);
+    setSearchQuery('');
+  }, [allMovies]);
+
   function handleSubmitMovie(e) {
     e.preventDefault();
 
@@ -92,8 +97,8 @@ function App() {
         </div>
       </div>
       <div className='bottom'>
-        <h1>My Watchlist</h1>
         <div className='filter-movie'>
+          <h1>My Watchlist</h1>
           <input value={searchQuery} onChange={(e) => handleFilterMovies(e.target.value)} placeholder="search" />
         </div>
         <MovieList
@@ -110,12 +115,12 @@ export default App;
 
   // ✅
 
-  // App() : track state for allMovies, filteredMovies, movieFormYearReleased, movieFormDirector, movieTitle, movieFormColor
+  // ✅ App() : track state for allMovies, filteredMovies, movieFormYearReleased, movieFormDirector, movieTitle, movieFormColor
 
-  // App() : define a handleDeleteMovie function that deleted a movie from the state array using title
+  // ✅ App() : define a handleDeleteMovie function that deleted a movie from the state array using title
 
-  // App() : define a handleFilterMovies function that takes in a string and set filteredMovies to an array of movies whose name matches that string
+  // ✅ App() : define a handleFilterMovies function that takes in a string and set filteredMovies to an array of movies whose name matches that string
 
-  // App() : passes state as props correctly to MovieForm, Movie, and MovieList
+  // ✅ App() : passes state as props correctly to MovieForm, Movie, and MovieList
 
   // App() : add a useEffect: whenever the state of allMovies changes for any reason, reset the visible movies in state to show all movies. (Clearing out the filter input box would be nice too, but it's optional)
