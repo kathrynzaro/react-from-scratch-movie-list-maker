@@ -11,6 +11,18 @@ function App() {
       director: 'James Cameron',
       year: '1997',
       color: 'pink'
+    },
+    {
+      title: 'A Movie',
+      director: 'Kat',
+      year: '2022',
+      color: 'lightsalmon'
+    },
+    {
+      title: 'Another Movie',
+      director: 'Also Kat',
+      year: '2022',
+      color: 'coral'
     }
   ]);
   const [filteredMovies, setFilteredMovies] = useState(allMovies);
@@ -18,6 +30,7 @@ function App() {
   const [movieDirector, setMovieDirector] = useState('');
   const [movieTitle, setMovieTitle] = useState('');
   const [movieColor, setMovieColor] = useState('pink');
+  const [searchQuery, setSearchQuery] = useState('');
 
 
   function handleSubmitMovie(e) {
@@ -32,6 +45,11 @@ function App() {
 
     const updatedMovies = [...allMovies, movie];
     setAllMovies(updatedMovies);
+
+    setMovieTitle('');
+    setMovieDirector('');
+    setMovieYearReleased('');
+    setMovieColor('pink');
   }
 
   function handleDeleteMovie(title) {
@@ -41,7 +59,12 @@ function App() {
     setAllMovies([...allMovies]);
   }
 
-  console.table(allMovies);
+  function handleFilterMovies(searchQuery) {
+    setSearchQuery(searchQuery);
+    const updatedMovies = allMovies.filter((movie) => movie.title.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    setFilteredMovies(updatedMovies);
+  }
 
   return (
     <div className="App">
@@ -65,10 +88,10 @@ function App() {
         }}/>
       </div>
       <div className='filter-movie'>
-        Filter Movies
+        <input value={searchQuery} onChange={(e) => handleFilterMovies(e.target.value)} />
       </div>
       <MovieList
-        allMovies={allMovies}
+        filteredMovies={searchQuery ? filteredMovies : allMovies}
         handleDeleteMovie={handleDeleteMovie}
       />
     </div>

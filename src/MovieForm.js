@@ -29,8 +29,8 @@ export default function MovieForm({
         <label>
           Color
           <select required value={movieColor} onChange={e => setMovieColor(e.target.value)}> 
-            <option value='antiquewhite'>off-white</option>
             <option value='lightpink'>pink</option>
+            <option value='antiquewhite'>off-white</option>
             <option value='lightsalmon'>salmon</option>
             <option value='lightcoral'>coral</option>
             <option value='lavender'>lavender</option>
