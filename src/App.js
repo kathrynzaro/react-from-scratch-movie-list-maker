@@ -68,32 +68,39 @@ function App() {
 
   return (
     <div className="App">
-      <MovieForm 
-        movieTitle={movieTitle}
-        setMovieTitle={setMovieTitle}
-        movieDirector={movieDirector}
-        setMovieDirector={setMovieDirector}
-        movieYearReleased={movieYearReleased}
-        setMovieYearReleased={setMovieYearReleased}
-        movieColor={movieColor}
-        setMovieColor={setMovieColor}
-        handleSubmitMovie={handleSubmitMovie}
-      />
-      <div className='current-movie'>
-        <Movie movie={{
-          title: movieTitle,
-          director: movieDirector,
-          year: movieYearReleased,
-          color: movieColor,
-        }}/>
+      <div className='top'>
+        <div className='form-preview'>
+          <MovieForm 
+            movieTitle={movieTitle}
+            setMovieTitle={setMovieTitle}
+            movieDirector={movieDirector}
+            setMovieDirector={setMovieDirector}
+            movieYearReleased={movieYearReleased}
+            setMovieYearReleased={setMovieYearReleased}
+            movieColor={movieColor}
+            setMovieColor={setMovieColor}
+            handleSubmitMovie={handleSubmitMovie}
+          />
+          <div className='current-movie'>
+            <Movie movie={{
+              title: movieTitle,
+              director: movieDirector,
+              year: movieYearReleased,
+              color: movieColor,
+            }}/>
+          </div>
+        </div>
       </div>
-      <div className='filter-movie'>
-        <input value={searchQuery} onChange={(e) => handleFilterMovies(e.target.value)} />
+      <div className='bottom'>
+        <h1>My Watchlist</h1>
+        <div className='filter-movie'>
+          <input value={searchQuery} onChange={(e) => handleFilterMovies(e.target.value)} placeholder="search" />
+        </div>
+        <MovieList
+          filteredMovies={searchQuery ? filteredMovies : allMovies}
+          handleDeleteMovie={handleDeleteMovie}
+        />
       </div>
-      <MovieList
-        filteredMovies={searchQuery ? filteredMovies : allMovies}
-        handleDeleteMovie={handleDeleteMovie}
-      />
     </div>
   );
 }
