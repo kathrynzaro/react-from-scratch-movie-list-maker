@@ -13,16 +13,40 @@ function App() {
       color: 'pink'
     },
     {
-      title: 'A Movie',
-      director: 'Kat',
-      year: '2022',
+      title: 'Portrait of a Lady on Fire',
+      director: 'Céline Sciamma',
+      year: '2019',
+      color: 'lavender'
+    },
+    {
+      title: 'Jennifer\'s Body',
+      director: 'Karyn Kusama',
+      year: '2009',
+      color: 'coral'
+    },
+    {
+      title: 'The Thing',
+      director: 'John Carpenter',
+      year: '1982',
+      color: 'antiquewhite'
+    },
+    {
+      title: 'The Nightmare Before Christmas',
+      director: 'Henry Selick',
+      year: '1993',
       color: 'lightsalmon'
     },
     {
-      title: 'Another Movie',
-      director: 'Also Kat',
-      year: '2022',
-      color: 'coral'
+      title: 'The Princess Bride',
+      director: 'Rob Reiner',
+      year: '1987',
+      color: 'lightgoldenrodyellow'
+    },
+    {
+      title: 'Moulin Rouge!',
+      director: 'Baz Luhrmann',
+      year: '2001',
+      color: 'lightblue'
     }
   ]);
   const [filteredMovies, setFilteredMovies] = useState(allMovies);
@@ -73,7 +97,18 @@ function App() {
 
   return (
     <div className="App">
-      <div className='top'>
+      <div className='filter-list'>
+        <div className='filter-movie'>
+          <h1>My Watchlist</h1>
+          <input value={searchQuery} onChange={(e) => handleFilterMovies(e.target.value)} placeholder="search" />
+          <img className='bounce tv' src='/transistor-tv.png' /> 
+        </div>
+        <MovieList
+          filteredMovies={searchQuery ? filteredMovies : allMovies}
+          handleDeleteMovie={handleDeleteMovie}
+        />
+      </div>
+      <div className='bottom'>
         <div className='form-preview'>
           <MovieForm 
             movieTitle={movieTitle}
@@ -96,24 +131,12 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='bottom'>
-        <div className='filter-movie'>
-          <h1>My Watchlist</h1>
-          <input value={searchQuery} onChange={(e) => handleFilterMovies(e.target.value)} placeholder="search" />
-        </div>
-        <MovieList
-          filteredMovies={searchQuery ? filteredMovies : allMovies}
-          handleDeleteMovie={handleDeleteMovie}
-        />
-      </div>
     </div>
   );
 }
 
 export default App;
 
-
-  // ✅
 
   // ✅ App() : track state for allMovies, filteredMovies, movieFormYearReleased, movieFormDirector, movieTitle, movieFormColor
 
@@ -123,4 +146,4 @@ export default App;
 
   // ✅ App() : passes state as props correctly to MovieForm, Movie, and MovieList
 
-  // App() : add a useEffect: whenever the state of allMovies changes for any reason, reset the visible movies in state to show all movies. (Clearing out the filter input box would be nice too, but it's optional)
+  // ✅ App() : add a useEffect: whenever the state of allMovies changes for any reason, reset the visible movies in state to show all movies. (Clearing out the filter input box would be nice too, but it's optional)

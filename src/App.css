@@ -11,7 +11,7 @@
   font-family: 'Oswald', sans-serif;
 }
 
-.top {
+.bottom {
   /* height: 50%; */
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@
   /* border-radius: 15px; */
   padding: 40px;
   width: 100%;
-  margin-top: 50px;
+  margin-bottom: 150px;
   color: black;
   background-color: rgb(42, 43, 44);
   height: 350px;
@@ -77,22 +77,22 @@ label {
   /* border-radius: 20px; */
 }
 
-.top .poster {
+.bottom .poster {
   height: 275px;
   width: 175px;
 }
 
-.bottom {
+.filter-list {
   margin-top: 75px;
   color: white;
-  padding-bottom: 100px;
+  /* padding-bottom: 40px; */
 }
 
 .movie-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 30px;
+  margin: 40px;
 }
 
 button, select, input {
@@ -121,7 +121,8 @@ button:hover {
 
 h1 {
   letter-spacing: 5px;
-  margin-left: 20px;
+  margin-left: 30px;
+  font-size: 3rem;
 }
 
 h2 {
@@ -143,7 +144,6 @@ h3 {
   background-color: white;
   color: black;
   /* border-radius: 5px; */
-  margin-right: 20px;
   font-size: 1.1rem;
 }
 
@@ -155,7 +155,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 select:hover {
@@ -165,4 +165,49 @@ select:hover {
 
 p {
   margin: 5px;
+}
+
+
+.tv {
+  width: 90px;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+  transform-origin: bottom;
+  margin-right: 50px;
+}
+
+
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.1, .9) translateY(0);
+  }
+
+  30% {
+    transform: scale(.9, 1.1) translateY(-50px);
+  }
+
+  50% {
+    transform: scale(1.05, .95) translateY(0);
+  }
+
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
 }

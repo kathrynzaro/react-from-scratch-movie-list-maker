@@ -35,6 +35,8 @@ export default function MovieForm({
             <option value='lightsalmon'>salmon</option>
             <option value='lightcoral'>coral</option>
             <option value='lavender'>lavender</option>
+            <option value='lightgoldenrodyellow'>light yellow</option>
+            <option value='lightblue'>light blue</option>
           </select>
         </label>
         <button>add to watchlist</button>
